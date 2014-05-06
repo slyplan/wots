@@ -1,0 +1,4 @@
+<% @examples.each do |example| %>
+  <p><%= example.id%>) <%= example.name %> <%= link_to "[x]", "examples/delete/#{example.id}" %></p>
+<% end %>
+<%= link_to "Add example", '/examples/new' %>

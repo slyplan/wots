@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  stamina: 1
+  luck: 1
+  watchful: 1
+  mood: 1
+  tire: 1
+  health: 1
+  comfort: 1
+  thirst: 1
+  hungry: 1
+  head_item_id: 1
+  body_item_id: 1
+  hands_item_id: 1
+  wrist_item_id: 1
+  legs_item_id: 1
+  boots_item_id: 1
+  backpack_item_id: 1
+
+two:
+  user_id: 1
+  stamina: 1
+  luck: 1
+  watchful: 1
+  mood: 1
+  tire: 1
+  health: 1
+  comfort: 1
+  thirst: 1
+  hungry: 1
+  head_item_id: 1
+  body_item_id: 1
+  hands_item_id: 1
+  wrist_item_id: 1
+  legs_item_id: 1
+  boots_item_id: 1
+  backpack_item_id: 1

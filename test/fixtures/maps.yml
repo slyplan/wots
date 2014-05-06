@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  clime_id: 1
+  name: MyString
+  spawn_time: 2014-05-06 08:33:26
+  temperature: 1
+  winter: false
+  snow: false
+  rain: false
+  sun: false
+
+two:
+  clime_id: 1
+  name: MyString
+  spawn_time: 2014-05-06 08:33:26
+  temperature: 1
+  winter: false
+  snow: false
+  rain: false
+  sun: false

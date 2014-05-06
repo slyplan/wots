@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  t_min: 1
+  t_max: 1
+  winter: 1
+  rain: 1
+  snow: 1
+  sun: 1
+
+two:
+  name: MyString
+  t_min: 1
+  t_max: 1
+  winter: 1
+  rain: 1
+  snow: 1
+  sun: 1

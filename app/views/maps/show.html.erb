@@ -1,0 +1,41 @@
+<p>Рисуем карту <%= @map.name %></p>
+
+<table border="1">
+  <% 2.times do |y| %>
+    <tr>
+    <% 2.times do |x| %>
+      <td>
+      <% current_loc = @map.locations.where(cx: x+1, cy: y+1).first %>
+      <p>x: <%= current_loc.cx %></p>
+      <p>y: <%= current_loc.cy %></p>
+      <% if @location.id == current_loc.id %>
+        <p>Вы здесь</p>
+      <% end %>
+      </td>
+    <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<p>Что имеется в данной местности:</p>
+<% @location.facilities.each do |fac| %>
+  <% if fac.visibility == 100 %>
+  <p><%= fac.name %></p>
+  <% end %>
+<% end %>
+
+<p>Что валяется на земле</p>
+<table border="1">
+  <tr>
+<% @location.inventory.slots.times do |t| %>
+    <td>
+      <% item = @location.inventory.items[t] %>
+      <% if item.nil? %>
+        Пусто
+      <% else %>
+        <%= item.item_template.name %>
+      <% end %>
+    </td> 
+<% end %>
+  </tr>
+</table>

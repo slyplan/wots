@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  map_id: 1
+  name: MyString
+  descr: MyText
+  cx: 1
+  cy: 1
+  inventory_id: 1
+
+two:
+  map_id: 1
+  name: MyString
+  descr: MyText
+  cx: 1
+  cy: 1
+  inventory_id: 1
