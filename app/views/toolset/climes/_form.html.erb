@@ -1,0 +1,46 @@
+<%= form_for([:toolset, @clime]) do |f| %>
+  <% if @clime.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@clime.errors.count, "error") %> Ошибки при сохранении:</h2>
+
+      <ul>
+      <% @clime.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    Название<br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    Вероятность дождя<br />
+    <%= f.text_field :rain %>
+  </div>
+  <div class="field">
+    Вероятность снега<br />
+    <%= f.text_field :snow %>
+  </div>
+  <div class="field">
+    Вероятность ветра<br />
+    <%= f.text_field :winter %>
+  </div>
+  <div class="field">
+    Вероятность солнца<br />
+    <%= f.text_field :sun %>
+  </div>
+  <div class="field">
+    Минимальная температура<br />
+    <%= f.text_field :t_min %>
+  </div>
+  <div class="field">
+    Максимальная температура<br />
+    <%= f.text_field :t_max %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Готово' %>
+  </div>
+<% end %>

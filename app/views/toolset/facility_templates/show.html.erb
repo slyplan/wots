@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @facility_template.name %>
+</p>
+
+<p>
+  <b>Descr:</b>
+  <%= @facility_template.descr %>
+</p>
+
+<p>
+  <b>Kind:</b>
+  <%= @facility_template.kind %>
+</p>
+
+<p>
+  <b>Visibility:</b>
+  <%= @facility_template.visibility %>
+</p>
+
+
+<%= link_to 'Edit', edit_facility_template_path(@facility_template) %> |
+<%= link_to 'Back', facility_templates_path %>

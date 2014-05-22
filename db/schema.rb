@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140506053118) do
+ActiveRecord::Schema.define(:version => 20140507133526) do
 
   create_table "actions", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,26 @@ ActiveRecord::Schema.define(:version => 20140506053118) do
     t.string   "ruby_class"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "actions_facilities", :force => true do |t|
+    t.integer "facility_id"
+    t.integer "action_id"
+  end
+
+  create_table "actions_facility_templates", :force => true do |t|
+    t.integer "facility_template_id"
+    t.integer "action_id"
+  end
+
+  create_table "actions_item_templates", :force => true do |t|
+    t.integer "item_template_id"
+    t.integer "action_id"
+  end
+
+  create_table "actions_locations", :force => true do |t|
+    t.integer "location_id"
+    t.integer "action_id"
   end
 
   create_table "characters", :force => true do |t|
@@ -66,18 +86,20 @@ ActiveRecord::Schema.define(:version => 20140506053118) do
 
   create_table "facilities", :force => true do |t|
     t.integer  "location_id"
+    t.integer  "own_inventory_id"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.integer  "facility_template_id"
+  end
+
+  create_table "facility_templates", :force => true do |t|
     t.string   "name"
     t.text     "descr"
     t.string   "kind"
     t.integer  "visibility"
-    t.integer  "own_inventory_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-  end
-
-  create_table "facilities_actions", :force => true do |t|
-    t.integer "facility_id"
-    t.integer "action_id"
+    t.integer  "inventory_size", :default => 0
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "inventories", :force => true do |t|
@@ -90,13 +112,9 @@ ActiveRecord::Schema.define(:version => 20140506053118) do
     t.string   "name"
     t.text     "descr"
     t.string   "kind"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "item_templates_actions", :force => true do |t|
-    t.integer "item_template_id"
-    t.integer "action_id"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.integer  "inventory_size", :default => 0
   end
 
   create_table "items", :force => true do |t|
@@ -116,11 +134,6 @@ ActiveRecord::Schema.define(:version => 20140506053118) do
     t.integer  "own_inventory_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
-  end
-
-  create_table "locations_actions", :force => true do |t|
-    t.integer "location_id"
-    t.integer "action_id"
   end
 
   create_table "maps", :force => true do |t|

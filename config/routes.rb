@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
 Wots::Application.routes.draw do
 
+  namespace :toolset do
+    resources :climes
+    resources :item_templates
+    resources :facility_templates
+  end
+
   devise_for :users
 
   root to: "home#index"

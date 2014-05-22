@@ -1,0 +1,33 @@
+<%= form_for([:toolset, @item_template]) do |f| %>
+  <% if @item_template.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item_template.errors.count, "error") %> ошибки при сохранении:</h2>
+
+      <ul>
+      <% @item_template.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    Название<br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    Описание<br />
+    <%= f.text_field :descr %>
+  </div>
+  <div class="field">
+    Тип<br />
+    <%= f.text_field :kind %>
+  </div>
+  <div class="field">
+    Размер инвенторя<br />
+    <%= f.text_field :inventory_size %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Готово' %>
+  </div>
+<% end %>

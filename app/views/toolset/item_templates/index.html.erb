@@ -1,0 +1,27 @@
+<h1>Предметы</h1>
+
+<table>
+  <tr>
+    <th>Название</th>
+    <th>Описание</th>
+    <th>Тип</th>
+    <th>Размер инвентаря</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @item_templates.each do |item_template| %>
+  <tr>
+    <td><%= item_template.name %></td>
+    <td><%= item_template.descr %></td>
+    <td><%= item_template.kind %></td>
+    <td><%= item_template.inventory_size%></td>
+    <td><%= link_to 'Редактировать', edit_toolset_item_template_path(item_template) %></td>
+    <td><%= link_to 'Удалить', toolset_item_template_path(item_template), method: :delete, data: { confirm: 'Точно удалить?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Добавить предмет', new_toolset_item_template_path %>

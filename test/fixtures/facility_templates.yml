@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  descr: MyText
+  kind: MyString
+  visibility: 1
+
+two:
+  name: MyString
+  descr: MyText
+  kind: MyString
+  visibility: 1

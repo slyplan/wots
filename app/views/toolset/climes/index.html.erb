@@ -1,0 +1,35 @@
+<h1>Климаты</h1>
+
+<table>
+  <tr>
+    <th>Название</th>
+    <th>Дождь</th>
+    <th>Снег</th>
+    <th>Ветер</th>
+    <th>Солнце</th>
+    <th>Min t</th>
+    <th>Max t</th>
+
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @climes.each do |clime| %>
+  <tr>
+    <td><%= clime.name %></td>
+    <td><%= clime.rain %></td>
+    <td><%= clime.snow %></td>
+    <td><%= clime.winter %></td>
+    <td><%= clime.sun %></td>
+    <td><%= clime.t_min %></td>
+    <td><%= clime.t_max %></td>
+
+    <td><%= link_to 'Редактировать', edit_toolset_clime_path(clime) %></td>
+    <td><%= link_to 'Удалить', toolset_clime_path(clime), method: :delete, data: { confirm: 'Точно удалить?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Добавить климат', new_toolset_clime_path %>

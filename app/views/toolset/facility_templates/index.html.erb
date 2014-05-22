@@ -1,0 +1,29 @@
+<h1>Предметы окружения</h1>
+
+<table>
+  <tr>
+    <th>Название</th>
+    <th>Описание</th>
+    <th>Тип</th>
+    <th>Видимость</th>
+    <th>Размер инвентаря</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @facility_templates.each do |facility_template| %>
+  <tr>
+    <td><%= facility_template.name %></td>
+    <td><%= facility_template.descr %></td>
+    <td><%= facility_template.kind %></td>
+    <td><%= facility_template.visibility %></td>
+    <td><%= facility_template.inventory_size %></td>
+    <td><%= link_to 'Редактировать', edit_toolset_facility_template_path(facility_template) %></td>
+    <td><%= link_to 'Удалить', toolset_facility_template_path(facility_template), method: :delete, data: { confirm: 'Точно удалить?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Создать предмет окружения', new_toolset_facility_template_path %>
